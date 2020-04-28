@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import MuiThemaProvider from 'material-ui/styles/MuiThemeProvider'
 
+import TasksIndex from './components/tasks_index';
+
 import './index.css';
 import reducer from './reducers'
 
@@ -25,10 +27,7 @@ ReactDOM.render(
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route path="/events/new"/>
-            <Route path="/events/:id"/>
-            <Route exact path="/"/>
-            <Route exact path="/events"/>
+            <Route exact path="/" component={TasksIndex}/>
           </Switch>
         </BrowserRouter>
       </Provider>
